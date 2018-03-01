@@ -56,23 +56,4 @@ public class TempSensorPubApp {
         config.put("bootstrap.servers", options.get(OPT_BOOTSTRAP_SERVERS));
         return config;
     }
-
-    /*
-    public static void main(String[] args) throws Exception {
-        // create a sensor
-        TempSensor sensor = new TempSensor();
-        // create a provider
-        DirectProvider dp = new DirectProvider();
-        // create a topology
-        Topology topology = dp.newTopology();
-        
-        // build the topology
-        TStream<String> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
-        TStream<String> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
-        filteredReadings.print();
-        
-
-        dp.submit(topology);
-    }
-    */
 }
