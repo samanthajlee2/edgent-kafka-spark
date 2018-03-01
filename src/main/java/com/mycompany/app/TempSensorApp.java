@@ -33,7 +33,6 @@ public class TempSensorApp {
         // TStream<String> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
         tempReadings.print();
         
-
         dp.submit(topology);
     }
     
