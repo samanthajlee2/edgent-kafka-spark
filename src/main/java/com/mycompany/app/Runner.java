@@ -43,11 +43,11 @@ public class Runner {
 
         Topology top;
         if (isPub) {
-            TemplateApp publisher = new TemplateApp(tp, options);
+            TempSensorPubApp publisher = new TempSensorPubApp(tp, options);
             top = publisher.buildAppTopology();
         }
         else {
-            TemplateApp subscriber = new TemplateApp(tp, options);
+            TempSensorPubApp subscriber = new TempSensorPubApp(tp, options);
             top = subscriber.buildAppTopology();
         }
         
