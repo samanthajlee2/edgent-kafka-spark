@@ -20,7 +20,7 @@ APP_DIR=.
 
 UBER_JAR=`echo ${APP_DIR}/target/*-uber.jar`
 
-FQ_MAIN_CLASS=com.mycompany.app.TemplateApp
+FQ_MAIN_CLASS=com.mycompany.app.TempSensorApp
 
 USAGE="usage: [--main <main-class>] [<args...>]"
 
