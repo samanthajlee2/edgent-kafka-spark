@@ -50,6 +50,7 @@ public class Runner {
             TempSensorPubApp subscriber = new TempSensorPubApp(tp, options);
             top = subscriber.buildAppTopology();
         }
+
         
         // Submit the app/topology; send or receive the messages.
         System.out.println(

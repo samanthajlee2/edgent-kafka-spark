@@ -38,7 +38,7 @@ import com.mycompany.app.Options;
  * <ul>
  * <li>{@code bootstrap.servers="localhost:9092"}</li>
  * <li>{@code zookeeper.connect="localhost:2181"}</li>
- * <li>kafka topic {@code "kafkaSampleTopic"} exists</li>
+ * <li>kafka topic {@code "kafkaTempsTopic"} exists</li>
  * </ul>
  * <p>
  * See the Apache Kafka link above for information about setting up a Kafka
@@ -97,7 +97,7 @@ public class KafkaClient {
             System.out.println(usage);
             return null;
         }
-        
+
         String[] announceOpts = new String[] {
         };
         if ((Boolean)options.get(OPT_VERBOSE))
@@ -128,11 +128,11 @@ public class KafkaClient {
         // options for which we have a default
         opts.addHandler(OPT_HELP, null, false);
         opts.addHandler(OPT_VERBOSE, null, false);
-        opts.addHandler(OPT_PUB, null, false);
+        opts.addHandler(OPT_PUB, null, true);
         opts.addHandler(OPT_SUB, null, false);
         opts.addHandler(OPT_BOOTSTRAP_SERVERS, v -> v, "localhost:9092");
         opts.addHandler(OPT_ZOOKEEPER_CONNECT, v -> v, "localhost:2181");
-        opts.addHandler(OPT_TOPIC, v -> v, "kafkaSampleTopic");
+        opts.addHandler(OPT_TOPIC, v -> v, "kafkaTempsTopic");
         opts.addHandler(OPT_PUB_CNT, v -> Integer.valueOf(v), -1);
 
         // optional options (no default value)
