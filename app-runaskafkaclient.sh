@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-DIR=..
+DIR=.
 
 UBER_JAR=`echo ${DIR}/target/my-app-*-uber.jar`
 
