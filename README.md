@@ -4,6 +4,7 @@ There are 3 examples in this project:
 2. TempSensorApp.java run with ./run-tempSensorApp.sh
 3. TempSensorPubApp.java run with ./run-tempSensorPubApp.sh
 
+Details:
 1. is a simple Hello Edgent program
 2. is an application that polls from a simulated temperature generator
 3. takes 2. and publishes the temperatures to Kafka
