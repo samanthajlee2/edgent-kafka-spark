@@ -39,7 +39,7 @@ public class TempSensorPubApp {
 
         TempSensor sensor = new TempSensor();
 
-        TStream<String> tempReadings = topology.poll(sensor, 100, TimeUnit.MILLISECONDS);
+        TStream<String> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
         TStream<String> filteredReadings = tempReadings.filter(reading -> Float.parseFloat(reading) < TempSensor.LOW+20 || Float.parseFloat(reading) > TempSensor.HIGH-20);
         TWindow<String,Integer> batchedReadings = tempReadings.last(1, TimeUnit.SECONDS, tuple -> 0);
         TStream<String> averagedReadings = batchedReadings.batch((tuples, key) -> {

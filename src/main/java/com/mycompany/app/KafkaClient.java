@@ -126,13 +126,21 @@ public class KafkaClient {
     static final String OPT_PUB_CNT = "pubcnt";
 
     private static void initHandlers(Options opts) {
+        String zoo = System.getenv("ZOOKEEPER_SERVER");
+        if (zoo == null)
+          zoo = "localhost:2181";
+          
+        String boot = System.getenv("BOOTSTRAP_SERVER");
+        if (boot == null)
+          boot = "localhost:9092";
+
         // options for which we have a default
         opts.addHandler(OPT_HELP, null, false);
         opts.addHandler(OPT_VERBOSE, null, false);
         opts.addHandler(OPT_PUB, null, true);
         opts.addHandler(OPT_SUB, null, false);
-        opts.addHandler(OPT_BOOTSTRAP_SERVERS, v -> v, "localhost:9092");
-        opts.addHandler(OPT_ZOOKEEPER_CONNECT, v -> v, "localhost:2181");
+        opts.addHandler(OPT_BOOTSTRAP_SERVERS, v -> v, boot);
+        opts.addHandler(OPT_ZOOKEEPER_CONNECT, v -> v, zoo);
         opts.addHandler(OPT_TOPIC, v -> v, "kafkaTempsTopic");
         opts.addHandler(OPT_TOPIC_2, v -> v, "kafkaAverageTopic");
         opts.addHandler(OPT_PUB_CNT, v -> Integer.valueOf(v), -1);
