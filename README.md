@@ -1,8 +1,8 @@
 There are 3 examples in this project: 
 
-1. HelloEdgent.java run with ./run-helloEdgent.sh
-2. TempSensorApp.java run with ./run-tempSensorApp.sh
-3. TempSensorPubApp.java run with ./run-tempSensorPubApp.sh
+1. `HelloEdgent.java` run with `./run-helloEdgent.sh`
+2. `TempSensorApp.java` run with `./run-tempSensorApp.sh`
+3. `TempSensorPubApp.java` run with `./run-tempSensorPubApp.sh`
 
 Details:
 1. is a simple Hello Edgent program
@@ -22,8 +22,8 @@ Note: Do NOT override the value via
 The build will not behave as desired.
 
 # Running the application
-You can copy `app-run.sh` and the generated `target/*-uber.jar` to the 
+You can copy `<script>.sh` and the generated `target/*-uber.jar` to the 
 edge device and then run it
 ```sh
-./app-run.sh
+./<script>.sh
 ```
