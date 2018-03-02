@@ -31,9 +31,10 @@ public class TempSensorApp {
         
         // build the topology
         TStream<String> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
-        TStream<String> filteredReadings = tempReadings.filter(reading -> Float.parseFloat(reading) < TempSensor.LOW+20 || Float.parseFloat(reading) > TempSensor.HIGH-20);
+        // TStream<String> filteredReadings = tempReadings.filter(reading -> Float.parseFloat(reading) < TempSensor.LOW+20 || Float.parseFloat(reading) > TempSensor.HIGH-20);
 
-        filteredReadings.print();
+        tempReadings.print();
+        // filteredReadings.print();
         
         dp.submit(topology);
     }
