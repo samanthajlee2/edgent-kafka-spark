@@ -151,11 +151,11 @@
       <artifactId>edgent-connectors-serial</artifactId>
       <version>${edgent.runtime.version}</version>
     </dependency-->
-    <dependency>
+    <!--dependency>
       <groupId>${edgent.runtime.groupId}</groupId>
       <artifactId>edgent-console-server</artifactId>
       <version>${edgent.runtime.version}</version>
-    </dependency>
+    </dependency-->
 
   </dependencies>
 

@@ -3,6 +3,5 @@ com/mycompany/app/TempSensorApp.class
 com/mycompany/app/Options.class
 com/mycompany/app/TempSensor.class
 com/mycompany/app/KafkaClient.class
-com/mycompany/app/HttpServerSample.class
 com/mycompany/app/TempSensorPubApp.class
 com/mycompany/app/Runner.class
