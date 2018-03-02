@@ -30,7 +30,7 @@ import com.mycompany.app.Options;
  * a connector used to create a bridge between topology streams
  * and subscribing to Kafka topics.
  * <p>
- * The client either publishes messages to a topic or   
+ * The client either publishes messages to a topic or
  * subscribes to the topic and reports the messages received.
  * <p>
  * By default, a running Kafka cluster with the following
@@ -74,7 +74,7 @@ public class KafkaClient {
 
         Runner.run(options);
     }
-     
+
     private static Options processArgs(String[] args) {
         Options options = new Options();
         initHandlers(options);
@@ -86,12 +86,12 @@ public class KafkaClient {
             System.out.println(usage);
             return null;
         }
-        
+
         if ((Boolean)options.get(OPT_HELP)) {
             System.out.println(usage);
             return null;
         }
-        
+
         if (!(Boolean)options.get(OPT_PUB) && !(Boolean)options.get(OPT_SUB)) {
             System.err.println(String.format("Missing argument '%s' or '%s'.", OPT_PUB, OPT_SUB));
             System.out.println(usage);
@@ -110,10 +110,10 @@ public class KafkaClient {
                 System.out.println("Using "+opt+"="+value);
             }
         }
-        
+
         return options;
     }
-    
+
     static final String OPT_VERBOSE = "-v";
     static final String OPT_HELP = "-h";
     static final String OPT_PUB = "pub";
@@ -122,8 +122,9 @@ public class KafkaClient {
     static final String OPT_ZOOKEEPER_CONNECT = "zookeeper.connect";
     static final String OPT_GROUP_ID = "group.id";
     static final String OPT_TOPIC = "topic";
+    static final String OPT_TOPIC_2 = "topic2";
     static final String OPT_PUB_CNT = "pubcnt";
-    
+
     private static void initHandlers(Options opts) {
         // options for which we have a default
         opts.addHandler(OPT_HELP, null, false);
@@ -133,10 +134,11 @@ public class KafkaClient {
         opts.addHandler(OPT_BOOTSTRAP_SERVERS, v -> v, "localhost:9092");
         opts.addHandler(OPT_ZOOKEEPER_CONNECT, v -> v, "localhost:2181");
         opts.addHandler(OPT_TOPIC, v -> v, "kafkaTempsTopic");
+        opts.addHandler(OPT_TOPIC_2, v -> v, "kafkaAverageTopic");
         opts.addHandler(OPT_PUB_CNT, v -> Integer.valueOf(v), -1);
 
         // optional options (no default value)
         opts.addHandler(OPT_GROUP_ID, v -> v);
     }
-    
+
 }
