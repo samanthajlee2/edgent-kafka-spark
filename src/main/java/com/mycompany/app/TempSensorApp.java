@@ -14,6 +14,7 @@ import static com.mycompany.app.KafkaClient.OPT_BOOTSTRAP_SERVERS;
 import static com.mycompany.app.KafkaClient.OPT_PUB_CNT;
 import static com.mycompany.app.KafkaClient.OPT_TOPIC;
 
+import com.mycompany.app.TempSensor;
 
 /**
  * Edgent Application template.
@@ -30,10 +31,10 @@ public class TempSensorApp {
         
         // build the topology
         TStream<String> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
-        // TStream<String> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
-        tempReadings.print();
+        TStream<String> filteredReadings = tempReadings.filter(reading -> Float.parseFloat(reading) < TempSensor.LOW+20 || Float.parseFloat(reading) > TempSensor.HIGH-20);
+
+        filteredReadings.print();
         
         dp.submit(topology);
     }
-    
 }
