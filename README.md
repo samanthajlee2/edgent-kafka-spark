@@ -9,10 +9,12 @@ You may need to run these commands as root.
 
 ### Cleanup
 Delete all containers: ```docker rm $(docker ps -a -q)```
+
 Delete all images: ```docker rmi $(docker images -q)```
 
 ## Running Kafka with Spark Streaming
 Download: `docker pull hausss/edgent-lab`
+
 Run: `docker run -it hausss/edgent-lab`
 
 #### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
