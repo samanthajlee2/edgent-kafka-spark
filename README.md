@@ -1,11 +1,11 @@
 # A container for deploying an Apache Edgent+Kafka+Spark container on the edge
 
 ## Helpful Docker tips
-You can find the container id with ```docker ps```   
-Copy a file to docker with ```docker cp <local file> <container id>:<container filepath>```
+You can find the container id with ```sudo docker ps```   
+Copy a file to docker with ```sudo docker cp <local file> <container id>:<container filepath>```
 
-Open another terminal into container: ```docker exec -it <container id> bash```     
-You may need to run these commands as root. 
+Open another terminal into container: ```sudo docker exec -it <container id> bash```     
+You may or may not need to run these commands as root. 
 
 ### Cleanup
 Delete all containers: ```docker rm $(docker ps -a -q)```
