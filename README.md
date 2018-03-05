@@ -2,9 +2,9 @@
 
 
 ## Running Kafka with Spark Streaming
-Download: `docker pull hausss/edgent-demo`
+Download: `sudo docker pull hausss/edgent-demo`
 
-Run: `docker run -it hausss/edgent-demo`
+Run: `sudo docker run -it hausss/edgent-demo`
 
 #### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
 
