@@ -1,5 +1,13 @@
 # A container for deploying an Apache Edgent+Kafka+Spark container on the edge
 
+
+## Running Kafka with Spark Streaming
+Download: `docker pull hausss/edgent-demo`
+
+Run: `docker run -it hausss/edgent-demo`
+
+#### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
+
 ## Helpful Docker tips
 You can find the container id with ```sudo docker ps```   
 Copy a file to docker with ```sudo docker cp <local file> <container id>:<container filepath>```
@@ -11,14 +19,6 @@ You may or may not need to run these commands as root.
 Delete all containers: ```docker rm $(docker ps -a -q)```
 
 Delete all images: ```docker rmi $(docker images -q)```
-
-## Running Kafka with Spark Streaming
-Download: `docker pull hausss/edgent-lab`
-
-Run: `docker run -it hausss/edgent-lab`
-
-#### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
-
 
 ## Codes and scripts to run them 
 
