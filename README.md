@@ -8,9 +8,11 @@ Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
 check: `pwd` should show that you are in `/lab`
 
 You can find the container id with ```sudo docker ps``` 
+
 Leave this terminal running and open TODO:three more terminals side by side with ```docker exec -it <container id> bash```.
 
 To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
+
 To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
