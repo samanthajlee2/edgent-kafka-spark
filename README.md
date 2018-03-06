@@ -36,14 +36,7 @@ To start Zookeeper and Kafka in the background: `./start-zookeeper-kafka.sh`
 This project includes a maven wrapper script to eliminate the need to
 manually download and install maven.
 
-
-## Running Spark Streaming
-
-Open a terminal with ```docker exec -it <container id> bash```.
-
-To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py`
-
-#### Building the project
+#### Working with Edgent
 ```sh
 ./mvnw clean package  # add -Pplatform-java7 or -Pplatform-android as needed
 ```
@@ -58,6 +51,14 @@ edge device and then run it
 ```sh
 ./<script>.sh
 ```
+
+
+## Running Spark Streaming
+
+Open a terminal with ```docker exec -it <container id> bash```.
+
+To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py`
+
 
 
 ### Cleanup
