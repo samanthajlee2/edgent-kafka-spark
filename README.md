@@ -38,15 +38,63 @@ Edit your edgent java files which are located in ```/lab/edgent/src/main/java/co
 
 Then (back in the edgent directory) to build the jar file run:
 ```sh
-./mvnw clean package  # add -Pplatform-java7 or -Pplatform-android as needed
+./mvnw clean package
+```
+
+This will package up your code and place it into the uber-jar
+
+## Edgent-Kafka Interface
+
+`KafkaClient.java` defines three topics.
+
+`OPT_TOPIC = kafkaTempsTopic`
+`OPT_TOPIC_2 = kafkaHighTempTopic`
+`OPT_TOPIC_3 = kafkaAverageTopic`
+
+To publish to one of these three topics, uncomment the following lines of code in `TempSensorPubApp.java`:
+
+```java
+Map<String,Object> config2 = newConfig();
+        KafkaProducer kafka2 = new KafkaProducer(topology, () -> config2);
+
+        kafka2.publish(YOUR_STREAM_HERE, options.get(OPT_TOPIC_2));
+```
+
+Replace `YOUR_STREAM_HERE` with the stream object you want to hook up to Kafka.
+
+Kafka should automatically create topics for you. If it does not, however, you can create a topic with the following command:
+
+```sh
+./kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 -replication-factor 1 --partitions 1 --topic TOPIC_NAME
 ```
 
 ## Running Spark Streaming
 
 Open a terminal with ```docker exec -it <container id> bash```.
 
-To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py`
+To start Spark Streaming:
 
+```sh
+./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py
+```
+
+This script will bin received temperatures into one of three categories: `LOW`, `HIGH`, or `FINE`, and display the count of each.
+
+To access the other two Kafka topics, you can run the following commands:
+
+`kafkaHighTempTopic`:
+
+```sh
+./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/highestDisplay.py
+```
+
+`kafkaAverageTopic`:
+
+```sh
+./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/averageDisplay.py
+```
+
+These will simply print out data as it arrives. They will not transform the data any further.
 
 ## Running the application on Raspberry Pi's
 ### Part One
