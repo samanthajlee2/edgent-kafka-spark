@@ -11,13 +11,11 @@ check: `pwd` should show that you are in `/lab`
 
 You can find the container id with ```sudo docker ps``` 
 
-Leave this terminal running and open more terminals as needed with ```docker exec -it <container id> bash```.
+Leave this terminal running and open two more terminals with ```docker exec -it <container id> bash```.
 
-To start Zookeeper and Kafka in the background: `./start-zookeeper-kafka.sh`
+To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
 
-(Alt) To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
-
-(Alt) To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
+To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
 ## Codes and scripts to run them 
