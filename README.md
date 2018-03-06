@@ -41,7 +41,7 @@ manually download and install maven.
 
 Open a terminal with ```docker exec -it <container id> bash```.
 
-To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 tempSummary.py`
+To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py`
 
 #### Building the project
 ```sh
