@@ -50,12 +50,15 @@ To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:
 
 ## Running the application on Raspberry Pi's
 ### Part One
+
 `export ZOOKEEPER_SERVER=192.168.0.100:2181`
+
 `export BOOTSTRAP_SERVER=192.168.0.100:9092`
 
 ### Part Two
-Develop locally then, you can copy `<script>.sh` and the generated `target/*-uber.jar` to the 
-edge device and then run it
+Develop locally like before. (build a new jar.)
+
+Then you can copy the generated `target/*-uber.jar` to the edge device and then run it with: `scp target/*-uber.jar pi@192.168.0.20X:~/edgent/target` where `X` is the last digit of your pi's IP address.
 
 
 ## Cleanup Docker Containers
