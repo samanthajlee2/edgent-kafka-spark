@@ -63,7 +63,7 @@ Map<String,Object> config2 = newConfig();
 
 Replace `YOUR_STREAM_HERE` with the stream object you want to hook up to Kafka.
 
-Kafka should automatically create topics for you. If it does not, however, you can create a topic with the following command:
+You may need to create the topics with the following command:
 
 ```sh
 ./kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 -replication-factor 1 --partitions 1 --topic TOPIC_NAME
