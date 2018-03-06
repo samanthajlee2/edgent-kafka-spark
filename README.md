@@ -5,6 +5,8 @@ Download: `sudo docker pull hausss/edgent-demo`
 
 Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
 
+      note: `--net=host` lets the docker container access the computer's network
+
 check: `pwd` should show that you are in `/lab`
 
 You can find the container id with ```sudo docker ps``` 
