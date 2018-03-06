@@ -1,6 +1,6 @@
 # Tutorial: Edgent with Raspberry Pi
 
-## Get container started with Kafka + Edgent
+## Get started with Kafka + Edgent
 Download: `sudo docker pull hausss/edgent-demo`
 
 Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
