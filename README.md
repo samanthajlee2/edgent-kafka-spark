@@ -97,14 +97,40 @@ To access the other two Kafka topics, you can run the following commands:
 These will simply print out data as it arrives. They will not transform the data any further.
 
 ## Running the application on Raspberry Pi's
+
+The Raspberry Pi's are living on their own wireless network.
+
+You will need to connect to the lab network to interact with the Pi and to copy data over.
+
+You will need to connect to the normal wireless network **the first time you build your jar** - Maven will need to acquire its dependencies. You may also need to reconnect if Maven decides it wants to download them again.
+
 ### Part One
+
+Connect to your Raspberry Pi. They are named A through G, and can be found at IP addresses `192.168.0.201, 192.168.0.202, ..., 192.168.0.207`
+
+The password to the pi is `edgecomp`
+
+Run these two shell commands immediately:
 
 `export ZOOKEEPER_SERVER=192.168.0.100:2181`
 
 `export BOOTSTRAP_SERVER=192.168.0.100:9092`
 
+The application will use these environemnt variables to locate the central Kafka instance.
+
 ### Part Two
+
+The Pis are preloaded with an Edgent jar.
+
+cd to `edgent`
+
+Execute Edgent with `./run-tempSensorPubApp.sh`
+
+### Part Three
+
 Develop locally like before. (build a new jar.)
+
+Do this step from inside `/lab/edgent` in your Docker container.
 
 Then you can copy the generated `target/*-uber.jar` to the edge device and then run it with: `scp target/*-uber.jar pi@192.168.0.20X:~/edgent/target` where `X` is the last digit of your pi's IP address.
 
