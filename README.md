@@ -1,6 +1,6 @@
 # Tutorial: Edgent with Raspberry Pi
 
-## Running Edgent + Kafka
+## Get container started with Kafka + Edgent
 Download: `sudo docker pull hausss/edgent-demo`
 
 Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
@@ -18,7 +18,7 @@ To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookee
 To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
-## Codes and scripts to run them 
+### Codes and scripts to run them 
 `cd edgent`
 
 1. `HelloEdgent.java` run with `./run-helloEdgent.sh`
@@ -26,7 +26,7 @@ To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.propert
 3. `TempSensorPubApp.java` run with `./run-tempSensorPubApp.sh`
 
 
-### Details:
+#### Details:
 1. is a simple Hello Edgent program
 2. is an application that polls from a simulated temperature generator
 3. takes 2. and publishes the temperatures to Kafka
@@ -56,7 +56,7 @@ To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:
 
 
 
-### Cleanup
+## Cleanup Docker Containers
 Delete all containers: ```docker rm $(docker ps -a -q)```
 
 Delete all images: ```docker rmi $(docker images -q)```
