@@ -6,6 +6,11 @@ Download: `sudo docker pull hausss/edgent-demo`
 
 Run: `sudo docker run -it hausss/edgent-demo bash`
 
+check: `pwd` should show that you are in `/lab`
+
+Run: `./start-stuff.sh` to start up Zookeeper and Kafka in the background via screen.
+
+
 #### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
 
 ## Helpful Docker tips
