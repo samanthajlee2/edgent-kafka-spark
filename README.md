@@ -15,6 +15,7 @@ To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookee
 
 To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
+To get a text editor: `apt install nano`
 
 ### Codes and scripts to run them 
 `cd edgent`
