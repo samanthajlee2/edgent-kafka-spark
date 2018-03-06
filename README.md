@@ -34,19 +34,12 @@ To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.propert
 This project includes a maven wrapper script to eliminate the need to
 manually download and install maven.
 
+
 #### Working with Edgent
 edit your edgent java files then to build the jar file run:
 ```sh
 ./mvnw clean package  # add -Pplatform-java7 or -Pplatform-android as needed
 ```
-
-#### Running the application on edge
-You can copy `<script>.sh` and the generated `target/*-uber.jar` to the 
-edge device and then run it
-```sh
-./<script>.sh
-```
-
 
 ## Running Spark Streaming
 
@@ -54,6 +47,15 @@ Open a terminal with ```docker exec -it <container id> bash```.
 
 To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 ./spark/tempSummary.py`
 
+
+## Running the application on Raspberry Pi's
+### Part One
+`export ZOOKEEPER_SERVER=192.168.0.100:2181`
+`export BOOTSTRAP_SERVER=192.168.0.100:9092`
+
+### Part Two
+Develop locally then, you can copy `<script>.sh` and the generated `target/*-uber.jar` to the 
+edge device and then run it
 
 
 ## Cleanup Docker Containers
