@@ -1,6 +1,6 @@
 # Tutorial: Edgent with Raspberry Pi
 
-## Running Edgent + Kafka + Spark Streaming
+## Running Edgent + Kafka
 Download: `sudo docker pull hausss/edgent-demo`
 
 Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
@@ -11,14 +11,17 @@ check: `pwd` should show that you are in `/lab`
 
 You can find the container id with ```sudo docker ps``` 
 
-Leave this terminal running and open TODO:three more terminals side by side with ```docker exec -it <container id> bash```.
+Leave this terminal running and open more terminals as needed with ```docker exec -it <container id> bash```.
 
-To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
+To start Zookeeper and Kafka in the background: `./start-zookeeper-kafka.sh`
 
-To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
+(Alt) To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
+
+(Alt) To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
 ## Codes and scripts to run them 
+`cd edgent`
 
 1. `HelloEdgent.java` run with `./run-helloEdgent.sh`
 2. `TempSensorApp.java` run with `./run-tempSensorApp.sh`
@@ -32,6 +35,16 @@ To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.propert
 
 This project includes a maven wrapper script to eliminate the need to
 manually download and install maven.
+
+
+## Running Spark Streaming
+
+Open a terminal with ```docker exec -it <container id> bash```.
+
+
+To start Spark Streaming: `./spark/startSpark.sh`
+
+(Alt) To start Spark Streaming: `./spark/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 tempSummary.py`
 
 #### Building the project
 ```sh
