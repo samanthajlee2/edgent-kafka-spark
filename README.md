@@ -1,4 +1,4 @@
-# A docker container for deploying an Apache Edgent+Kafka+Spark container on the edge
+# Tutorial: Edgent with Raspberry Pi
 
 ## Running Edgent + Kafka + Spark Streaming
 Download: `sudo docker pull hausss/edgent-demo`
@@ -7,10 +7,15 @@ Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
 
 check: `pwd` should show that you are in `/lab`
 
-Run: `./start-stuff.sh` to start up Zookeeper and Kafka in the background via screen.
+You can find the container id with ```sudo docker ps``` 
+Leave this terminal running and open TODO:three more terminals side by side with ```docker exec -it <container id> bash```.
+
+To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
+To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
-#### TODO: Leave this terminal running and open two more terminals side by side with ```docker exec -it <container id> bash```.
+
+
 
 ## Helpful Docker tips
 You can find the container id with ```sudo docker ps```   
