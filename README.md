@@ -7,9 +7,9 @@ Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
 
       note: `--net=host` lets the docker container access the computer's network (so make sure you aren't already running Zookeeper or Kafka)
 
-You can find the container id with ```sudo docker ps``` 
-
 Leave this terminal running and open two more terminals with ```docker exec -it <container id> bash```.
+
+You can find the container id with ```sudo docker ps``` 
 
 To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties`
 
