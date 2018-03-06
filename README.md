@@ -34,7 +34,9 @@ manually download and install maven.
 
 
 #### Working with Edgent
-edit your edgent java files then to build the jar file run:
+Edit your edgent java files which are located in ```/lab/edgent/src/main/java/com/mycompany/app```
+
+Then to build the jar file run:
 ```sh
 ./mvnw clean package  # add -Pplatform-java7 or -Pplatform-android as needed
 ```
