@@ -16,26 +16,12 @@ To start Zookeeper: `./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookee
 To start Kafka: `./kafka/bin/kafka-server-start.sh ./kafka/config/server.properties`
 
 
-
-
-
-## Helpful Docker tips
-You can find the container id with ```sudo docker ps```   
-Copy a file to docker with ```sudo docker cp <local file> <container id>:<container filepath>```
-
-Open another terminal into container: ```sudo docker exec -it <container id> bash```     
-You may or may not need to run these commands as root. 
-
-### Cleanup
-Delete all containers: ```docker rm $(docker ps -a -q)```
-
-Delete all images: ```docker rmi $(docker images -q)```
-
 ## Codes and scripts to run them 
 
 1. `HelloEdgent.java` run with `./run-helloEdgent.sh`
 2. `TempSensorApp.java` run with `./run-tempSensorApp.sh`
 3. `TempSensorPubApp.java` run with `./run-tempSensorPubApp.sh`
+
 
 ### Details:
 1. is a simple Hello Edgent program
@@ -60,3 +46,15 @@ edge device and then run it
 ```sh
 ./<script>.sh
 ```
+
+
+### Cleanup
+Delete all containers: ```docker rm $(docker ps -a -q)```
+
+Delete all images: ```docker rmi $(docker images -q)```
+
+
+## Helpful Docker tips
+Copy a file to docker with ```sudo docker cp <local file> <container id>:<container filepath>```
+   
+You may or may not need to run docker commands as root. 
