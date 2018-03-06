@@ -4,7 +4,7 @@
 ## Running Edgent + Kafka + Spark Streaming
 Download: `sudo docker pull hausss/edgent-demo`
 
-Run: `sudo docker run -it hausss/edgent-demo bash`
+Run: `sudo docker run --net=host -it hausss/edgent-demo bash`
 
 check: `pwd` should show that you are in `/lab`
 
