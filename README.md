@@ -113,9 +113,9 @@ The password to the pi is `edgecomp`
 
 Run these two shell commands immediately:
 
-`export ZOOKEEPER_SERVER=192.168.0.100:2181`
+`export ZOOKEEPER_SERVER=192.168.0.101:2181`
 
-`export BOOTSTRAP_SERVER=192.168.0.100:9092`
+`export BOOTSTRAP_SERVER=192.168.0.101:9092`
 
 The application will use these environemnt variables to locate the central Kafka instance.
 
