@@ -1,5 +1,4 @@
-# A container for deploying an Apache Edgent+Kafka+Spark container on the edge
-
+# A docker container for deploying an Apache Edgent+Kafka+Spark container on the edge
 
 ## Running Edgent + Kafka + Spark Streaming
 Download: `sudo docker pull hausss/edgent-demo`
