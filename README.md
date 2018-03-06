@@ -37,6 +37,7 @@ This project includes a maven wrapper script to eliminate the need to
 manually download and install maven.
 
 #### Working with Edgent
+edit your edgent java files then to build the jar file run:
 ```sh
 ./mvnw clean package  # add -Pplatform-java7 or -Pplatform-android as needed
 ```
@@ -45,7 +46,7 @@ Note: Do NOT override the value via
 `./mvnw ... -Dedgent.runtime.version=<the-version>`.
 The build will not behave as desired.
 
-#### Running the application
+#### Running the application on edge
 You can copy `<script>.sh` and the generated `target/*-uber.jar` to the 
 edge device and then run it
 ```sh
